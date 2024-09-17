@@ -1,0 +1,525 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* Disable scrolling for the entire page */
+}
+
+.row {
+  display: flex;
+  flex-direction: row; /* Default direction for larger screens */
+  height: 100vh; /* Full height of the viewport */
+  margin: 0; /* Remove any default margin */
+}
+
+.lsP, .rsP {
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  box-sizing: border-box; /* Include padding/border in the element's dimensions */
+}
+
+.lsP {
+  background-color: #f3f4f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  padding: 10px; /* Add padding for spacing */
+}
+
+.lsP h3 {
+  text-align: center; /* Center the text within the heading */
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.rsP {
+  background: #f8f9fa; /* Light background for the right side panel */
+  padding: 20px;
+  overflow: auto; /* Allow scrolling if content overflows */
+}
+
+.welcome-box {
+  display: inline-block; /* Box size based on content */
+  border: 2px solid #ddd; /* Border similar to .content */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the box */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  margin: 20px; /* Margin for spacing */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center; /* Center text inside .card-body */
+  height: 100%; /* Ensure the card-body takes full height */
+}
+
+.card {
+  display: none; /* Hide all cards initially */
+}
+
+.card.show {
+  display: block; /* Show the card with class 'show' */
+}
+
+.myUL {
+  max-height: 100vh; /* Ensure it doesn’t exceed the viewport height */
+  overflow-y: auto;  /* Allow vertical scrolling if needed */
+}
+
+.lsP header img {
+  width: 150px; /* Adjust image size */
+  height: auto;
+}
+
+h3 {
+  padding-top: 5px;
+  display: block; /* Ensure the element is being displayed */
+  color: #000; /* Ensure text color is visible against background */
+  visibility: visible; /* Ensure the element is visible */
+}
+
+li {
+  padding-top: 4.483rem;
+}
+
+.Btn-nav {
+  display: block;
+  color: #6c757d; /* Grey text color */
+  background: none; /* Remove background */
+  text-align: center;
+  padding: 10px 20px; /* Add padding for spacing */
+  margin: 5px 0; /* Margin adjusted for vertical spacing */
+  text-decoration: underline; /* Add underline to text */
+  text-decoration-color: #6c757d; /* Underline color */
+  text-decoration-style: solid; /* Underline style */
+  text-decoration-thickness: 2px; /* Thickness of the underline */
+  border: none; /* Remove border */
+  font-size: 40px; /* Larger font size */
+  font-weight: normal; /* Normal text weight */
+  transition: color 0.3s, text-decoration-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.Btn-nav:hover {
+  color: blue; /* Change text color on hover */
+  text-decoration-color: blue; /* Change underline color on hover */
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+.lsP-buttons {
+  display: flex;
+  flex-direction: column; /* Vertical layout */
+}
+
+h4 {
+  place-items: top;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 28px;
+}
+
+.homeCard {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2; /* Ensure the card content is above the background */
+}
+
+.homeCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/style/public/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  z-index: 1; /* Ensure it stays behind the card content */
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Keep content above the background image */
+}
+
+.home-box {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  width: 80%; /* Responsive width */
+  max-width: 600px;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Makes the container fill the entire viewport */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  z-index: 2;
+}
+
+.center {
+  font-size: 5vw; /* Responsive font size based on viewport width */
+  text-align: center;
+  color: black;
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  border-radius: 0; /* No additional border radius */
+  background-color: transparent; /* Ensure background color is transparent */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Display ellipsis (...) if text overflows */
+}
+
+.minitext {
+  font-size: 33px;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Let the card height adjust based on content */
+  min-height: 100vh; /* Ensure it at least takes up the full viewport height */
+  justify-content: flex-start; /* Align content to the top */
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in the element's dimensions */
+}
+
+.infoCard .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between sections */
+  flex: 1; /* Allow the card body to grow and take up available space */
+}
+
+.infoCard h4 {
+  margin: 0; /* Remove default margin */
+  padding: 10px 0; /* Add padding for spacing */
+  font-size: 28px; /* Adjust font size */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Font styling */
+  text-align: center; /* Center the text */
+}
+
+.box-container {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  margin-bottom: 20px; /* Space between box containers */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Optional: Limit the width */
+}
+
+.box-container > * {
+  margin: 0;
+  padding: 10px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.contactCard .card-body {
+  padding: 20px; /* Adds padding inside the card-body */
+}
+
+.contact-info {
+  padding-bottom: 15px; /* Adds padding below the contact info section */
+}
+
+.social-media a {
+  display: inline; /* Ensure each social media link is on a new line */
+  padding: 10px; /* Adds vertical padding between social media links */
+}
+
+.contactCard h4 {
+  padding-bottom: 10px; /* Adds space between the header and the content */
+  text-align: center; /* Centers the header text */
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.card {
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling inside the card */
+}
+
+h4 {
+  margin-top: 20px; /* Ensure spacing at the top */
+  text-align: center; /* Center the text */
+}
+
+.box-container {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  margin-bottom: 20px; /* Space between box containers */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Optional: Limit the width */
+}
+
+.content {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 100%; /* Full width of the container */
+}
+
+.contentHeader {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  justify-content: center; /* Center text vertically */
+  align-items: center; /* Center text horizontally */
+  width: 100%; /* Full width of the content */
+}
+
+.contentText {
+  margin: 5px 0;
+}
+
+.experienceCD {
+  height: 95vh; /* Set the card body height relative to viewport */
+  padding: 10px;
+  box-sizing: border-box;
+  display: block; /* Allows natural scrolling when content overflows */
+  scroll-behavior: smooth; /* Optional: adds smooth scrolling effect */
+}
+
+
+/* Small devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+  /* Styles for small devices */
+
+  .center{
+    align-items: center;
+    justify-content: center;
+  }
+  .welcome-box{
+    position: absolute;
+    top: 33%;
+  }
+
+  .lsP-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+  }
+
+  .Btn-nav {
+    font-size: 16px;
+  }
+
+  .rsP {
+    width: 100%; /* Full width on small devices */
+    margin-top: 20px; /* Optional: Add margin for spacing */
+  }
+
+  .scrollable{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    top: 10px; /* Adjust as needed */
+    position: absolute;
+  }
+  /* Contact Card adjustments */
+  .contactCard {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-end; /* Align children to the bottom */
+    align-items: center; /* Center horizontally */
+    padding: 20px; /* Add padding inside the card */
+    margin: 0; /* Ensure no margin affects the centering */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    height: 100vh;
+    padding-bottom: 250px;
+  }
+
+  /* Scrollable card-body in experienceCard */
+  .experienceCD {
+    max-height: 80vh;
+    width: 90%; /* Make the card width smaller */
+    margin: 0 auto; /* Center the card horizontally */
+    padding: 20px; /* Add padding around the content */
+    font-size: 14px; /* Adjust font size for smaller devices */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow-y: scroll; /* Make the entire card scrollable */
+    position: relative; /* Ensure positioning context is established */
+  }
+  
+  .experienceCD h4 {
+    font-size: 18px; /* Adjust the header size */
+    margin: 0 0 10px 0; /* Remove top margin and space below */
+    padding-top: 30px;
+  }
+  
+  .experienceCD .box-container {
+    margin-bottom: 10px; /* Reduce space between content blocks */
+    padding-bottom: 25px;
+  }
+  
+  .experienceCD .content {
+    padding: 5px; /* Reduce padding inside content sections */
+  }
+
+  .aboutCard {
+    max-height: 80vh;
+    width: 90%; /* Make the card width smaller */
+    margin: 0 auto; /* Center the card horizontally */
+    padding: 20px; /* Add padding around the content */
+    font-size: 14px; /* Adjust font size for smaller devices */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow-y: scroll; /* Make the entire card scrollable */
+    position: relative; /* Ensure positioning context is established */
+  }
+  
+  .aboutCard h4 {
+    font-size: 18px; /* Adjust the header size */
+    margin: 0 0 10px 0; /* Remove top margin and space below */
+    padding-top: 30px;
+  }
+  
+  .aboutCard .box-container {
+    margin-bottom: 10px; /* Reduce space between content blocks */
+    padding-bottom: 25px;
+  }
+  
+  .aboutCard .content {
+    padding: 5px; /* Reduce padding inside content sections */
+  }
+}
+
+
+/* Medium devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+  /* Styles for small devices */
+
+  .lsP-buttons {
+    display: flex;
+    flex-direction: conlum;
+  }
+
+  .Btn-nav {
+    font-size: 16px;
+  }
+
+  .rsP {
+    width: 100%; /* Full width on small devices */
+    margin-top: 20px; /* Optional: Add margin for spacing */
+  }
+
+  /* Contact Card adjustments */
+  .contactCard {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-end; /* Align children to the bottom */
+    align-items: center; /* Center horizontally */
+    padding: 20px; /* Add padding inside the card */
+    margin: 0; /* Ensure no margin affects the centering */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    height: 100vh;
+    padding-bottom: 250px;
+  }
+
+  /* Scrollable card-body in experienceCard */
+  .experienceCD.scrollable {
+    max-height: 80vh; /* Reduce the max height */
+    width: 90%; /* Make the card width smaller */
+    margin: 0 auto; /* Center the card horizontally */
+    padding: 10px; /* Reduce padding */
+    font-size: 14px; /* Adjust font size for smaller devices */
+    padding-top: 20px;
+  }
+
+  .experienceCD h4 {
+    font-size: 18px; /* Adjust the header size */
+    margin-bottom: 10px; /* Reduce the space below the header */
+  }
+
+  .experienceCD .box-container {
+    margin-bottom: 10px; /* Reduce space between content blocks */
+  }
+
+  .experienceCD .content {
+    padding: 5px; /* Reduce padding inside content sections */
+  }
+
+  .aboutCard.scrollable {
+    max-height: 80vh; /* Reduce the max height */
+    width: 90%; /* Make the card width smaller */
+    margin: 0 auto; /* Center the card horizontally */
+    padding: 10px; /* Reduce padding */
+    font-size: 14px; /* Adjust font size for smaller devices */
+  }
+
+  .aboutCard h4 {
+    font-size: 18px; /* Adjust the header size */
+    margin-bottom: 10px; /* Reduce the space below the header */
+  }
+
+  .aboutCard .content {
+    padding: 5px; /* Reduce padding inside content sections */
+  }
+}
+}
+
+/* Large devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+  /* Styles for large devices */
+  .lsP {
+      width: 33%; /* Adjust width for large devices */
+  }
+
+  .rsP {
+      width: 67%; /* Adjust width for large devices */
+  }
+
+  /* Other styles for large devices */
+}
+
+/* Extra large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Styles for extra large devices */
+  .lsP {
+      width: 25%; /* Adjust width for extra large devices */
+  }
+
+  .rsP {
+      width: 75%; /* Adjust width for extra large devices */
+  }
+
+  /* Other styles for extra large devices */
+}
+
